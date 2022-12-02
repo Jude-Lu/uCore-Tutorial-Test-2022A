@@ -128,6 +128,16 @@ int pipe(void *p)
 	return syscall(SYS_pipe2, p);
 }
 
+int sigaction(int signum, sigact *act, sigact *oldact)
+{
+	return syscall(SYS_sigact, signum, act, oldact);
+}
+
+int kill(int pid, uint32 signum)
+{
+	return syscall(SYS_kill, pid, signum);
+}
+
 int mailread(void *buf, int len)
 {
 	return syscall(SYS_mailread, buf, len);

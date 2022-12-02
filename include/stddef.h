@@ -62,6 +62,40 @@ typedef __builtin_va_list va_list;
 
 #define MAX_SYSCALL_NUM 500
 
+#define SIGHUP 1
+#define SIGINT 2
+#define SIGQUIT 3
+#define SIGILL 4
+#define SIGTRAP 5
+#define SIGABRT 6
+#define SIGBUS 7
+#define SIGFPE 8
+#define SIGKILL 9
+#define SIGUSR1 10
+#define SIGSEGV 11
+#define SIGUSR2 12
+#define SIGPIPE 13
+#define SIGALRM 14
+#define SIGTERM 15
+#define SIGSTKFLT 16
+#define SIGCHLD 17
+#define SIGCONT 18
+#define SIGSTOP 19
+#define SIGTSTP 20
+#define SIGTTIN 21
+#define SIGTTOU 22
+#define SIGURG 23
+#define SIGXCPU 24
+#define SIGXFSZ 25
+#define SIGVTALRM 26
+#define SIGPROF 27
+#define SIGWINCH 28
+#define SIGIO 29
+#define SIGPWR 30
+#define SIGSYS 31
+
+#define SA_SIGINFO	0x00000040
+
 typedef struct {
 	uint64 sec; // 自 Unix 纪元起的秒数
 	uint64 usec; // 微秒数
@@ -74,6 +108,11 @@ typedef struct {
 	uint32 nlink; // 硬链接数量，初始为1
 	uint64 pad[7]; // 无需考虑，为了兼容性设计
 } Stat;
+
+typedef struct {
+	void (*handler)(int);
+	uint64   sa_mask;
+} sigact;
 
 typedef enum {
 	UnInit,

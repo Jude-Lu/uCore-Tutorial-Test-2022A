@@ -26,6 +26,7 @@ int munmap(void *start, unsigned long long len);
 int wait(int *);
 int spawn(const char *file);
 int pipe(void *p);
+int sigaction(int signum, sigact *act, sigact *oldact);
 int mailread(void *buf, int len);
 int mailwrite(int pid, void *buf, int len);
 int fstat(int fd, Stat *st);
