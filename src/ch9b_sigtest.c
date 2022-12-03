@@ -9,6 +9,7 @@ int sigio = 0;
 void handler()
 {
     sigio++;
+    printf("%d\b", sigio);
     sigreturn();
 }
 
@@ -21,11 +22,11 @@ int main()
 
     puts("start sigtest\n");
     printf("hello sigtest\n");
-    sigaction(SIGIO, &act, NULL);
+    assert_eq(sigaction(SIGIO, &act, NULL), 0);
     assert_eq(sigaction(SIGKILL, &act, NULL), -1);
 
     sleep(1000);
-    kill(getpid(), SIGIO);
+    assert_eq(kill(getpid(), SIGIO), 0);
     sleep(1000);
 
     assert_eq(sigio, 1);
