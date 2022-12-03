@@ -94,8 +94,6 @@ typedef __builtin_va_list va_list;
 #define SIGPWR 30
 #define SIGSYS 31
 
-#define SA_SIGINFO	0x00000040
-
 typedef struct {
 	uint64 sec; // 自 Unix 纪元起的秒数
 	uint64 usec; // 微秒数

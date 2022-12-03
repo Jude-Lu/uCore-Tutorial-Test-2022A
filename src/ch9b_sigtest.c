@@ -9,7 +9,6 @@ int sigio = 0;
 void handler()
 {
     sigio++;
-    printf("%d\b", sigio);
     sigreturn();
 }
 
@@ -18,7 +17,7 @@ int main()
     sigact act;
 
     act.handler = handler;
-    act.sa_mask = SA_SIGINFO;
+    act.sa_mask = 0;
 
     puts("start sigtest\n");
     printf("hello sigtest\n");
