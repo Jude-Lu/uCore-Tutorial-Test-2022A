@@ -143,6 +143,11 @@ int kill(int pid, uint32 signum)
 	return syscall(SYS_kill, pid, signum);
 }
 
+int sigprocmask(unsigned int mask)
+{
+	return syscall(SYS_rt_sigprocmask, mask);
+}
+
 int mailread(void *buf, int len)
 {
 	return syscall(SYS_mailread, buf, len);
