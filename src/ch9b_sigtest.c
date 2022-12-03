@@ -25,11 +25,10 @@ int main()
     assert_eq(sigaction(SIGKILL, &act, NULL), -1);
 
     sleep(1000);
-    for (int i = 0;i < 100;i++)
-        kill(getpid(), SIGIO);
+    kill(getpid(), SIGIO);
     sleep(1000);
 
-    assert_eq(sigio, 100);
+    assert_eq(sigio, 1);
     puts("sigtest passed!");
     return 0;
 }

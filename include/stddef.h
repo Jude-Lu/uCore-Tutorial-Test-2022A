@@ -110,7 +110,7 @@ typedef struct {
 } Stat;
 
 typedef struct {
-	void (*handler)(int);
+	void (*handler)();
 	uint64   sa_mask;
 } sigact;
 
