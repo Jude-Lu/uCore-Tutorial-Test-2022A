@@ -25,6 +25,11 @@ int main()
     sleep(1000);
     assert_eq(sigio, 1);
 
+    sigact act_2;
+    assert_eq(sigaction(SIGIO, &act, &act_2), 0);
+    assert_eq(act_2.handler, sigio_handler);
+    assert_eq(act_2.sa_mask, 0);
+
     sigprocmask(1U << SIGIO);
     assert_eq(kill(getpid(), SIGIO), -1);
     sigprocmask(0);
