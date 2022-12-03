@@ -26,6 +26,7 @@ CH5_BASE_TESTS := ch5b_ $(CH3_BASE_TESTS) usershell
 CH6_BASE_TESTS := ch6b_ $(CH5_BASE_TESTS) 
 CH7_BASE_TESTS := ch7b_ $(CH5_BASE_TESTS) 
 CH8_BASE_TESTS := ch8b_ $(CH6_BASE_TESTS) 
+CH9_BASE_TESTS := ch9b_ $(CH6_BASE_TESTS) 
 
 
 CH2_TESTS := $(CH2_BASE_TESTS)
@@ -38,6 +39,7 @@ CH6_TESTS := ch6b_ $(CH5_TESTS_BASE) ch6_
 # CH7_TESTS := ch7b_ $(CH5_TESTS_BASE) ch7_
 CH7_TESTS := ch7b_ $(CH5_TESTS_BASE)
 CH8_TESTS := $(CH8_BASE_TESTS) ch8_
+CH9_TESTS := $(CH9_BASE_TESTS)
 
 BASE ?= 0
 
@@ -49,6 +51,7 @@ CH5_TESTS_BASE := $(CH5_BASE_TESTS)
 CH6_TESTS := $(CH6_BASE_TESTS)
 CH7_TESTS := $(CH7_BASE_TESTS)
 CH8_TESTS := $(CH8_BASE_TESTS)
+CH9_TESTS := $(CH9_BASE_TESTS)
 endif
 
 ifeq ($(CHAPTER), 2)
@@ -83,6 +86,8 @@ else ifeq ($(CHAPTER), 8)
 	CH_TESTS := $(CH8_TESTS)
 else ifeq ($(CHAPTER), 8_only)
 	CH_TESTS := ch8_
+else ifeq ($(CHAPTER), 9)
+	CH_TESTS := $(CH9_TESTS)
 endif
 
 binary:
