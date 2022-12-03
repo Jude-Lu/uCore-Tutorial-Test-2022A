@@ -133,6 +133,11 @@ int sigaction(int signum, sigact *act, sigact *oldact)
 	return syscall(SYS_sigact, signum, act, oldact);
 }
 
+int sigreturn()
+{
+	return syscall(SYS_rt_sigreturn);
+}
+
 int kill(int pid, uint32 signum)
 {
 	return syscall(SYS_kill, pid, signum);
