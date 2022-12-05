@@ -31,12 +31,12 @@ int main()
     assert_eq(sigaction(SIGALRM, &act, NULL), 0);
 
     assert_eq(kill(getpid(), SIGIO), 0);
-    sleep(1000);
+    sleep(100);
     assert_eq(sigio, 1);
 
     assert_eq(kill(getpid(), SIGIO), 0);
     assert_eq(kill(getpid(), SIGALRM), 0);
-    sleep(1000);
+    sleep(100);
     assert_eq(sigio, 2);
     assert_eq(sigalrm, 1);
     

@@ -6,15 +6,15 @@
 /// 辅助测例，运行所有其他测例。
 
 const char *TESTS[] = {
-	"ch2b_hello_world\0",    "ch2b_power\0",	      "ch3b_sleep\0",
-	"ch3b_sleep1\0",         "ch3b_yield0\0",	      "ch3b_yield1\0",
-	"ch3b_yield2\0",         "ch5b_getpid\0",	      "ch5b_forktest0\0",
-	"ch5b_forktest1\0",      "ch5b_forktest2\0",     "ch6b_filetest\0",
-	"ch6b_exec\0",	         "ch7b_pipetest\0",      "ch8b_mpsc_sem\0",
-	"ch8b_mut_race\0",       "ch8b_sync_sem\0",      "ch8b_test_condvar\0",
-	"ch8b_threads_arg\0",    "ch8b_threads\0",       "ch8b_spin_mut_race\0",
-	"ch8b_mut_phi_din\0",    "ch9b_sigtest\0",       "ch9b_sigtest2\0",
-	"ch9b_sigtest3\0"
+	"ch2b_hello_world\0",    "ch2b_power\0",	        "ch3b_sleep\0",
+	"ch3b_sleep1\0",         "ch3b_yield0\0",	        "ch3b_yield1\0",
+	"ch3b_yield2\0",         "ch5b_getpid\0",	        "ch5b_forktest0\0",
+	"ch5b_forktest1\0",      "ch5b_forktest2\0",        "ch6b_filetest\0",
+	"ch6b_exec\0",	         "ch7b_pipetest\0",         "ch8b_mpsc_sem\0",
+	"ch8b_mut_race\0",       "ch8b_sync_sem\0",         "ch8b_test_condvar\0",
+	"ch8b_threads_arg\0",    "ch8b_threads\0",          "ch8b_spin_mut_race\0",
+	"ch8b_mut_phi_din\0",    "ch9b_sigtest\0",          "ch9b_sigtest2\0",
+	"ch9b_sigtest3\0",       "ch9b_multiprocsignals\0", "ch9b_stop_cont\0"
 };
 
 int main()

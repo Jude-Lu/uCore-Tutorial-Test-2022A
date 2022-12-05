@@ -22,7 +22,7 @@ int main()
     assert_eq(sigaction(SIGIO, &act, NULL), 0);
 
     assert_eq(kill(getpid(), SIGIO), 0);
-    sleep(1000);
+    sleep(100);
     assert_eq(sigio, 1);
 
     sigact act_2;
@@ -35,7 +35,7 @@ int main()
     sigprocmask(0);
 
     assert_eq(kill(getpid(), SIGIO), 0);
-    sleep(1000);
+    sleep(100);
     assert_eq(sigio, 2);
     
     puts("sigtest3 passed!");
